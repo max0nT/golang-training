@@ -1,0 +1,43 @@
+info:
+  contact: {}
+paths:
+  /api/v1/me/:
+    get:
+      description: Past GitHub Api key to perform request
+      responses: {}
+      summary: Get User Info from GitHub API
+      tags:
+      - GitHub API
+  /api/v1/repo/create/:
+    post:
+      responses: {}
+      tags:
+      - GitHub API
+  /api/v1/repo/detail/:
+    get:
+      responses: {}
+      tags:
+      - GitHub API
+  /api/v1/repo/list/:
+    get:
+      parameters:
+      - description: User kind
+        in: path
+        name: kind
+        required: true
+        type: string
+      - description: User name
+        in: path
+        name: name
+        required: true
+        type: string
+      responses: {}
+      tags:
+      - GitHub API
+securityDefinitions:
+  Bearer:
+    description: Past GitHub Api key to perform request
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

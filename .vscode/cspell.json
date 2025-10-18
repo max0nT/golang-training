@@ -1,0 +1,13 @@
+{
+    "dictionaryDefinitions": [
+        {
+            "name": "project-related-words",
+            "path": "./project-related-words.txt",
+            "addWords": true
+        }
+    ],
+    "words": [
+        "githubapi",
+        "swaggo"
+    ]
+}
