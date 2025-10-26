@@ -33,6 +33,9 @@ func (controller *Controller) CreateRepo(ctx *gin.Context) {
 		githubData.FromMap(jsonData),
 	)
 
-	ctx.JSON(response.StatusCode, response.Body)
+	ctx.JSON(
+		response.StatusCode,
+		controller.processResponse(response),
+	)
 
 }

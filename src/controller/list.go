@@ -22,5 +22,8 @@ func (controller *Controller) GetRepoList(ctx *gin.Context) {
 		name,
 	)
 
-	ctx.JSON(response.StatusCode, response.Body)
+	ctx.JSON(
+		response.StatusCode,
+		controller.processResponse(response),
+	)
 }

@@ -54,7 +54,7 @@ func makeRequest(
 	)
 	request.Header.Set(
 		"Authorization",
-		fmt.Sprintf("Bearer %v", token),
+		token,
 	)
 	client := &http.Client{
 		CheckRedirect: nil,
@@ -85,6 +85,11 @@ func GetRepoList(
 	kind string,
 	name string,
 ) (*http.Response, error) {
+	fmt.Printf(
+		"https://api.github.com/%v/%v/repos",
+		kind,
+		name,
+	)
 	return makeRequest(
 		token,
 		fmt.Sprintf(
@@ -105,7 +110,7 @@ func GetRepoDetailed(
 	return makeRequest(
 		token,
 		fmt.Sprintf(
-			"https://api.github.com/repos/%v/%v/",
+			"https://api.github.com/repos/%v/%v",
 			owner,
 			repoName,
 		),

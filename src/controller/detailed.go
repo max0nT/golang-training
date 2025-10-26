@@ -19,5 +19,9 @@ func (controller *Controller) GetDetailedRepoData(ctx *gin.Context) {
 		owner,
 		name,
 	)
-	ctx.JSON(response.StatusCode, response.Body)
+
+	ctx.JSON(
+		response.StatusCode,
+		controller.processResponse(response),
+	)
 }

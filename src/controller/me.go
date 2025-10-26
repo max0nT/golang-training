@@ -12,6 +12,5 @@ import (
 func (controller *Controller) GetMe(ctx *gin.Context) {
 	token := controller.getToken(ctx)
 	response, _ := githubapi.GetMeInfo(token)
-
-	ctx.JSON(response.StatusCode, response.Body)
+	ctx.JSON(response.StatusCode, controller.processResponse(response))
 }
